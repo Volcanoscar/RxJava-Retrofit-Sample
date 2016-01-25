@@ -1,0 +1,62 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.2"
+
+    defaultConfig {
+        applicationId "com.example.retrofit"
+        minSdkVersion 15
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+}
+
+
+
+//add for logger
+repositories {
+    maven { url "https://jitpack.io" }
+}
+
+
+dependencies {
+
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:23.1.1'
+    compile 'com.squareup.retrofit2:retrofit:2.0.0-beta3'
+//    compile 'com.squareup.retrofit2:retrofit-converters:2.0.0-beta3'
+//    compile 'com.squareup.retrofit2:retrofit-adapters:2.0.0-beta3'
+    compile 'com.squareup.retrofit2:converter-gson:2.0.0-beta3'
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.0.0-beta3'
+    compile 'com.squareup.okhttp3:okhttp:3.0.1'
+
+    compile 'com.squareup.retrofit:converter-gson:2.0.0-beta2'
+    compile 'com.squareup.retrofit:adapter-rxjava:2.0.0-beta2'
+    compile 'io.reactivex:rxandroid:1.1.0'
+
+    compile 'com.google.guava:guava:19.0'
+
+    compile 'com.squareup.retrofit:retrofit-mock:2.0.0-beta2'
+    compile 'com.squareup.retrofit2:retrofit-mock:2.0.0-beta3'
+
+    compile 'com.squareup.okhttp3:mockwebserver:3.0.1'
+
+    compile 'com.squareup.okhttp:mockwebserver:2.7.2'
+    compile 'com.jakewharton.timber:timber:2.4.2'
+    compile 'com.github.orhanobut:logger:1.12'
+    compile 'com.google.android.gms:play-services-appindexing:8.1.0'
+    compile 'org.jetbrains:annotations:13.0'
+}
